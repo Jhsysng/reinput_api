@@ -1,5 +1,6 @@
 package info.reinput.folder.domain;
 
+import info.reinput.folder.domain.dto.req.FolderCreateReq;
 import info.reinput.global.domain.Color;
 import info.reinput.global.domain.Share;
 import info.reinput.global.domain.TimeAudit;
@@ -7,6 +8,7 @@ import info.reinput.insight.domain.Insight;
 import info.reinput.member.domain.Member;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -47,4 +49,19 @@ public class Folder {
 
     @Embedded
     private TimeAudit timeAudit;
+
+    @Builder
+    public Folder(String name, Color color, Member member) {
+        this.name = name;
+        this.color = color;
+        this.member = member;
+    }
+
+    public static Folder createFolder(FolderCreateReq folderCreateReq, Member member){
+        return Folder.builder()
+                .name(folderCreateReq.folderName())
+                .color(folderCreateReq.folderColor())
+                .member(member)
+                .build();
+    }
 }
