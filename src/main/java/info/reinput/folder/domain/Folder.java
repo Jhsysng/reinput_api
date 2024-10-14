@@ -1,6 +1,6 @@
 package info.reinput.folder.domain;
 
-import info.reinput.folder.domain.dto.req.FolderCreateReq;
+import info.reinput.folder.domain.dto.FolderCreateReq;
 import info.reinput.global.domain.Color;
 import info.reinput.global.domain.Share;
 import info.reinput.global.domain.TimeAudit;
@@ -64,4 +64,11 @@ public class Folder {
                 .member(member)
                 .build();
     }
+
+    public void patchFolder(Folder folderPatch){
+        this.name = folderPatch.name!=null ? folderPatch.name : this.name;
+        this.color = folderPatch.color!=null ? folderPatch.color : this.color;
+    }
+
+
 }

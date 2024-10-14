@@ -1,7 +1,7 @@
 package info.reinput.folder.application;
 
 import info.reinput.folder.domain.Folder;
-import info.reinput.folder.domain.dto.req.FolderCreateReq;
+import info.reinput.folder.domain.dto.FolderCreateReq;
 import info.reinput.folder.domain.dto.res.FolderRes;
 import info.reinput.folder.domain.dto.res.FoldersRes;
 import info.reinput.folder.infra.FolderRepository;

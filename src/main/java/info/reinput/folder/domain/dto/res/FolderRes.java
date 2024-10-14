@@ -9,13 +9,17 @@ import java.time.LocalDateTime;
 public record FolderRes(
         Long id,
         String name,
-        String color
+        String color,
+        int insightCount
 ) {
     public static FolderRes of(Folder folder) {
         return FolderRes.builder()
                 .id(folder.getId())
                 .name(folder.getName())
                 .color(folder.getColor().toString())
+                .insightCount(folder.getInsights().size())
                 .build();
     }
+
+    //todo folder request queryDsl dto 추가
 }

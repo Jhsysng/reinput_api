@@ -1,4 +1,4 @@
-package info.reinput.folder.domain.dto.req;
+package info.reinput.folder.domain.dto;
 
 import info.reinput.folder.domain.Folder;
 import info.reinput.global.domain.Color;
